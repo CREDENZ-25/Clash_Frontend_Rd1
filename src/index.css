@@ -9,3 +9,8 @@
   font-family: "Press Start 2P", cursive;
 }
 
+.shadow-pixel {
+  box-shadow: 
+    0 0 0 2px rgba(74, 18, 55, 1), /* Main border */
+    0 0 0 4px rgba(30, 52, 69, 1); /* Additional shadow for pixelated effect */
+}
