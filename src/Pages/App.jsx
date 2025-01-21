@@ -1,13 +1,17 @@
-
-
 import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import {Homepg,Loginpg} from './Pages/Home';
+import {Route, Routes } from 'react-router-dom';
 import Home from  './Home.jsx';
-//import Login from './Login.jsx';
+import Login from './Login.jsx';
+
 function App() {
   return (
-    <div><Home /></div>
+    <main>
+    <Routes>
+    <Route path="/" element={<Home />} /> 
+    <Route path="/login" element={<Login />} />
+   <Route path="*" element={<Error />} />
+    </Routes>
+</main>
   );
 }
 
