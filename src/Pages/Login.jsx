@@ -1,7 +1,7 @@
 import { authUser, notAuthUser } from "../Redux/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { Card } from "pixel-retroui";
 import { Button } from "pixel-retroui";
 import ClashPixelBG from "../assets/ClashPixelBG.gif";
@@ -180,7 +180,7 @@ const Login = () => {
                 />
               </div>
             </div>
-        
+             {/* <Link to="/instructions"> */}
             <Button onClick={handleLogin} bg="#DE5027" className="w-45 h-10 hover:bg-[#b84716]">
               <svg
                 viewBox="0 0 289 50"
