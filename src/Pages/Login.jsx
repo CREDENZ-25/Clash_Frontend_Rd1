@@ -34,11 +34,24 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     const {username,password}=logData;
+    console.log(logData);
     try {
       const res = await axios.post(
-        "http://localhost:8000/auth/login",
-        logData
-      );
+        "http://localhost:5000/login",
+        {
+          email: logData.username,
+          password:logData.password
+        })
+      ;
+
+      console.log(res);
+
+      if(res.status===404){
+        throw 404 
+      }
+      else if(res.status===400){
+        throw 400
+      }
       toast.success("Login Successful!", { position: "top-center" });
       console.log("login Success!!!",res.data);
       dispatch(authUser());
@@ -167,8 +180,8 @@ const Login = () => {
                 />
               </div>
             </div>
-           <Link to="/instructions">
-            <Button bg="#DE5027" className="w-45 h-10 hover:bg-[#b84716]">
+        
+            <Button onClick={handleLogin} bg="#DE5027" className="w-45 h-10 hover:bg-[#b84716]">
               <svg
                 viewBox="0 0 289 50"
                 xmlns="http://www.w3.org/2000/svg"
@@ -187,13 +200,18 @@ const Login = () => {
                 </text>
               </svg>
             </Button>
-            </Link> 
-          </form>
+            </form>
+          </div>
+          </Card>
         </div>
-      </Card>
-    </div>
-    <ToastContainer  />
-    </>
-  );
+        
+        <ToastContainer  />
+        </>
+  )
+    
+  
+   
+   
+  
 };
 export default Login;
