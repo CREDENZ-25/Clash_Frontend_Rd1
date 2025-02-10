@@ -12,7 +12,7 @@ const InstructionCard = ({ logo, title, description }) => {
       textColor="black"
       borderColor="#4A1237"
       shadowColor="#EC841C"
-      className="relative instruction font-pixel flex flex-col items-center text-center p-4 rounded-md w-full sm:w-64 md:w-72 lg:w-80"
+      className="relative instruction h-[90%] font-pixel flex flex-col justify-center items-center text-center p-4 rounded-md w-full sm:w-64 md:w-72 lg:w-80"
     >
       <img
         src={logo}
@@ -52,28 +52,13 @@ const Instructions = () => {
   ];
 
   return (
-    <div className="instructions-container font-pixel flex flex-col items-center justify-center text-[#FFF546] bg-instructions-bg bg-cover bg-center min-h-screen">
+    <div className="instructions-container  font-pixel flex flex-col items-center justify-center text-[#FFF546] bg-instructions-bg bg-cover bg-center min-h-screen">
       {/* Header */}
-      <header className="flex flex-col sm:flex-row items-center justify-between w-full px-4 sm:px-8 pt-4 pb-5">
-        <h1 className="text-xl font-bold text-[#FFF546] header-text drop-shadow-xl">
-          CLASH
-        </h1>
-        <nav className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 mt-4 sm:mt-0">
-          <button className="text-xl text-[#FFF546] font-bold hover:underline header-text drop-shadow-xl">
-            Leaderboard
-          </button>
-          <button className="text-xl text-[#FFF546] font-bold hover:underline header-text drop-shadow-xl">
-            Result
-          </button>
-          <button className="text-xl text-[#FFF546] font-bold hover:underline header-text drop-shadow-xl">
-            Logout
-          </button>
-        </nav>
-      </header>
+      
 
       {/* Title */}
       <h1
-        className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 relative inline-block text-center header-text"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 relative inline-block text-center header-text mt-[80px]"
         style={{
           textShadow: "4px 4px 6px #4A1237", 
           WebkitTextStroke: "2px #4A1237",
@@ -83,7 +68,7 @@ const Instructions = () => {
       </h1>
 
       {/* Instruction Cards */}
-      <div className="instructions grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 px-4 sm:px-8">
+      <div className="instructions h-[400px] w-full bg--500 flex justify-evenly items-center">
         {instructionsData.map((instruction, index) => (
           <InstructionCard
             key={index}
@@ -96,11 +81,11 @@ const Instructions = () => {
 
       {/* Next Button */}
       <Button
-        bg="#9E2E08"
+        bg="#DE5027"
         textColor="#FFF546"
         borderColor="#1E3445"
         shadowColor="#1E3445"
-        className="next-button text-xl font-bold mt-8 px-6 py-2 md:px-10 md:py-3 bg-[#DE5027] rounded-md border-t-2 border-l-2 border-r-4 border-b-4 drop-shadow-xl"
+        className="next-button text-xl font-bold  px-6 py-1 md:px-10 md:py-1 "
       >
         NEXT
       </Button>
