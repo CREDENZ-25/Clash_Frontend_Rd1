@@ -1,0 +1,157 @@
+@import 'pixel-retroui/dist/index.css';
+
+.Result {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom,#ee8b24,#a12f09);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-align: center;
+}
+
+.head  {
+  font-weight: bold;
+  font-size: 50px;
+  color: yellow;
+}
+.container{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+}
+.container1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.container2{
+  display: flex;
+  width:auto;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.user-credentials {
+  text-align: left;
+  margin: auto;
+}
+.card1 {
+  background-color: #ee8b24;
+  color:yellow;
+  box-shadow: black;
+  height: 250px;
+  width:250px; 
+}
+
+.r1{
+  padding-top: 50px;
+  font-size: 25px;
+}
+
+.result1 {
+  padding-top: 90px;
+  padding-bottom: 0px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: yellow;
+  font-size: 80px;
+}
+
+
+.card2 {
+  background-color: #ee8b24;
+  color:yellow;
+  box-shadow: black;
+  bottom: 20px;
+  left: 620px;
+  height: 250px;
+  width: 250px;
+}
+
+.r2{
+  padding-top: 50px;
+  font-size: 25px;
+}
+
+.result2 {
+  padding-top: 80px;
+  padding-bottom: 0px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: yellow;
+  font-size: 80px;
+}
+
+.outer-card {
+  right: 0px;
+  top:270px;
+  height: 500px;
+  width: 490px; 
+  background-color: #ee8b24;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; 
+  box-shadow: black;
+}
+.card3 {
+  padding: 15px;
+  margin-left: 20px;
+  background-color: #a12f09;
+  width: 450px;
+  height: 50px;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(255, 153, 0);
+}
+
+.r3{
+  font-size: 35px;
+  text-align: center;
+  color:yellow;
+  margin-top: 20px;
+  margin-left: 180px;
+  font-weight: bold;
+  text-shadow: black;
+}
+
+.retro-card {
+  width: 750px;
+  padding: 20px;
+  height:200px;
+  display: flex;
+  box-shadow: black;
+  background-color: #ee8b24;
+  color: yellow;
+  font-size: 16px;
+  font-weight: bold;
+}
+.omg{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pfp{
+  width: 150px;
+  height: 150px;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+
+.user{
+top: 0px;
+}
+
+.username {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.email {
+  font-size: 0.9rem;
+  color: #777;
+}
