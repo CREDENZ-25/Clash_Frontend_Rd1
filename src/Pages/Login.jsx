@@ -9,6 +9,21 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 import { useState } from "react";
+const handleFullscreenAndNavigate = () => {
+  const elem = document.documentElement;
+
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) {
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) {
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    elem.msRequestFullscreen();
+  }
+
+  
+};
 
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -19,7 +34,7 @@ const Login = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
 
   const [logData, setLogData] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -33,10 +48,10 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const {username,password}=logData;
+    const {email,password}=logData;
     try {
       const res = await axios.post(
-        "http://localhost:8000/auth/login",
+        "http://localhost:5000/login",
         logData
       );
       toast.success("Login Successful!", { position: "top-center" });
@@ -102,7 +117,7 @@ const Login = () => {
           >
             <div className="form-inputs mb-[30px] bg--600 h-[30vh] flex flex-col justify-center items-center ">
               <div className="form-group mb-2 text-left bg--500">
-                <label for="username" className="block mb-1">
+                <label for="email" className="block mb-1">
                   <svg
                     viewBox="0 40 500 100"
                     xmlns="http://www.w3.org/2000/svg"
@@ -120,18 +135,18 @@ const Login = () => {
                       className="font-bold lg:text-[3vw] max-lg:text-[4vh] drop-shadow-[3px_3px_0px_#101e34] "
                       
                     >
-                      USERNAME
+                      Email
                     </text>
                   </svg>
                 </label>
                 <input
                   type="text"
-                  id="username"
-                  name="username"
+                  id="email"
+                  name="email"
                   required
                   className="w-[300px] p-3 rounded-[10px] mb-2 text-black bg-transparent border-2 border-black -mt-4 "
                   onChange={addData}
-                  value={logData.username}
+                  value={logData.email}
                 />
               </div>
               <div className="form-group mb-2 text-left bg--500">
@@ -168,7 +183,7 @@ const Login = () => {
               </div>
             </div>
            {/* <Link to="/instructions"> */}
-            <Button bg="#DE5027" className="w-45 h-10 hover:bg-[#b84716]">
+            <Button bg="#DE5027" className="w-45 h-10 hover:bg-[#b84716]" onClick={handleFullscreenAndNavigate}>
               <svg
                 viewBox="0 0 289 50"
                 xmlns="http://www.w3.org/2000/svg"
