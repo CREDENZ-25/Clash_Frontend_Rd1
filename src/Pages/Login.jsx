@@ -1,7 +1,6 @@
 import { authUser, notAuthUser } from "../Redux/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-//import { Link } from "react-router-dom";
 import { Card } from "pixel-retroui";
 import { Button } from "pixel-retroui";
 import ClashPixelBG from "../assets/ClashPixelBG.gif";
@@ -56,6 +55,7 @@ const Login = () => {
       );
       toast.success("Login Successful!", { position: "top-center" });
       console.log("login Success!!!",res.data);
+      handleFullscreenAndNavigate();
       dispatch(authUser());
       navigate("/instructions");
     } catch (err) {
@@ -124,7 +124,7 @@ const Login = () => {
                     className="w-full h-full "
                   >
                     <text
-                      x="22%"
+                      x="14%"
                       y="90%"
                       dominantBaseline="middle"
                       textAnchor="middle"
@@ -135,7 +135,7 @@ const Login = () => {
                       className="font-bold lg:text-[3vw] max-lg:text-[4vh] drop-shadow-[3px_3px_0px_#101e34] "
                       
                     >
-                      Email
+                      EMAIL
                     </text>
                   </svg>
                 </label>
@@ -183,7 +183,7 @@ const Login = () => {
               </div>
             </div>
            {/* <Link to="/instructions"> */}
-            <Button bg="#DE5027" className="w-45 h-10 hover:bg-[#b84716]" onClick={handleFullscreenAndNavigate}>
+            <Button bg="#DE5027" className="w-45 h-10 hover:bg-[#b84716]">
               <svg
                 viewBox="0 0 289 50"
                 xmlns="http://www.w3.org/2000/svg"
