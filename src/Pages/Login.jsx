@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 import { useState } from "react";
+// import useFullscreen from "../hooks/useFullscreen.js";
 const handleFullscreenAndNavigate = () => {
   const elem = document.documentElement;
 
@@ -24,10 +25,14 @@ const handleFullscreenAndNavigate = () => {
   
 };
 
+
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+// const enableFullscreen = useFullscreen();
+
+
 
   axios.defaults.withCredentials=true;
   const isAuth = useSelector((state) => state.auth.isAuth);
@@ -56,6 +61,7 @@ const Login = () => {
       toast.success("Login Successful!", { position: "top-center" });
       console.log("login Success!!!",res.data);
       handleFullscreenAndNavigate();
+      // enableFullscreen();
       dispatch(authUser());
       navigate("/instructions");
     } catch (err) {

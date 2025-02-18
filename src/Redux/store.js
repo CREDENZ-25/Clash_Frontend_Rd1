@@ -10,6 +10,8 @@ const persistConfig = {
 };
 
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+// const persistedfullScreReducer = persistReducer(persistConfig, authReducer);
+
 
 export const store = configureStore({
   reducer: {
